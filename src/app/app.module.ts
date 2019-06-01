@@ -14,7 +14,6 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
   imports: [
@@ -28,7 +27,6 @@ import { MovieComponent } from './movie/movie.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    MovieComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
