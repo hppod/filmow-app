@@ -13,6 +13,7 @@ import {
 } from '@angular/material';
 
 import { HomeComponent } from './../../home/home.component'
+import { MoviesComponent } from './../../movies/movies.component'
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { HomeComponent } from './../../home/home.component'
     MatTooltipModule,
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    MoviesComponent
   ]
 })
 
