@@ -16,6 +16,7 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { MoviesService } from "./movies/movies.service"
+import { MovieService } from "./movie/movie.service"
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { MoviesService } from "./movies/movies.service"
     AdminLayoutComponent,
   ],
   providers: [
-    MoviesService
+    MoviesService,
+    MovieService
   ],
   bootstrap: [AppComponent]
 })
