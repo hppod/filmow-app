@@ -1,7 +1,9 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
-      
+      <div *ngFor="let movie of movies" class="col-md-3">
+        <app-card-movie [movie]="movie"></app-card-movie>
+      </div>
     </div>
   </div>
 </div>

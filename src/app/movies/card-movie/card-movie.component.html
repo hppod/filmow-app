@@ -1,11 +1,9 @@
-<div class="col-md-3">
-  <a href="https://www.google.com">
-    <div class="card">
-      <img class="card-img-top" src="movie.POSTER_URL" alt="movie.TITLE">
-      <div class="card-body">
-        <h4><b>{{movie.TITLE}}</b></h4>
-        <p>movie.STORYLINE</p>
-      </div>
+<a href="https://www.google.com">
+  <div class="card">
+    <img class="card-img-top" [src]="movie.POSTER_URL" [alt]="movie.TITLE">
+    <div class="card-body">
+      <h4><b>{{movie.TITLE}}</b></h4>
+      <p>{{movie.STORYLINE}}...</p>
     </div>
-  </a>
-</div>
+  </div>
+</a>
