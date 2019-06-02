@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { MoviesService } from "./movies/movies.service"
 import { MovieService } from "./movie/movie.service";
+import { ActorsService } from "./movie/actors/actors.service"
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { MovieService } from "./movie/movie.service";
   ],
   providers: [
     MoviesService,
-    MovieService
+    MovieService,
+    ActorsService
   ],
   bootstrap: [AppComponent]
 })
