@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from './../movies/movie.model'
-import { MovieService } from './movie.service'
 import { ActivatedRoute } from "@angular/router"
 import { DomSanitizer } from '@angular/platform-browser';
+import { MovieService } from './movie.service'
+import { Movie } from './../movies/movie.model'
+import { Rating } from './rating.model'
 
 @Component({
   selector: 'app-movie',
@@ -12,6 +13,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class MovieComponent implements OnInit {
 
   movie: Movie
+  rating: Rating
   trailer: any
   comingSoon: boolean
   curDate = new Date().toISOString()
@@ -26,6 +28,9 @@ export class MovieComponent implements OnInit {
       this.comingSoon = this.comingSoonMovie(response.DATE_PREMIERE, this.curDate)
     })
 
+    this.ms.getAvgRating(id).subscribe((response) => {
+      this.rating = response[0]
+    })
   }
 
   comingSoonMovie(premiereDate: string, currentDate: string) {
