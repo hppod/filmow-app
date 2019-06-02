@@ -15,6 +15,7 @@ import {
 import { HomeComponent } from './../../home/home.component'
 import { MoviesComponent } from './../../movies/movies.component'
 import { MovieComponent } from './../../movie/movie.component'
+import { StorylineComponent } from './../../movie/storyline/storyline.component'
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { MovieComponent } from './../../movie/movie.component'
   declarations: [
     HomeComponent,
     MoviesComponent,
-    MovieComponent
+    MovieComponent,
+    StorylineComponent
   ]
 })
 

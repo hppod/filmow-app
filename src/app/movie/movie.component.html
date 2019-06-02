@@ -29,16 +29,21 @@
         <hr />
         <div class="row">
           <div class="col-md-12">
-            <h3>Sinopse</h3>
-            <p class="sinopse">27 anos depois dos eventos de It - Parte 1, o grupo de adolescentes que fazia parte do
-              Losers Club - o
-              clube dos perdedores - realiza uma reunião. No entanto, o que parece ser apenas um reencontro de velhos
-              amigos acaba se tornando em uma verdadeira e sangrenta batalha quando Pennywise (Bill Skarsgard), o
-              palhaço retorna.</p>
-            <br />
-            <h5><strong>Diretores:</strong> &nbsp; Reinaldo Amarelo, Marcelo Vermelho</h5>
-            <h5><strong>Escritores:</strong> &nbsp; Bruno Azul, André Verde</h5>
+            <ul class="nav nav-pills nav-justified">
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['storyline']">Sinopse</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['actors']">Atores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['reviews']">Avaliações</a>
+              </li>
+            </ul>
           </div>
+        </div>
+        <div class="row">
+          <router-outlet></router-outlet>
         </div>
       </div>
     </div>
