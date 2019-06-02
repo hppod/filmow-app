@@ -13,6 +13,8 @@ export class MovieComponent implements OnInit {
 
   movie: Movie
   trailer: any
+  comingSoon: boolean
+  curDate = new Date().toISOString()
 
   constructor(private ms: MovieService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
@@ -21,8 +23,17 @@ export class MovieComponent implements OnInit {
     this.ms.getMovie(id).subscribe((response) => {
       this.movie = response
       this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(response.TRAILER_URL)
+      this.comingSoon = this.comingSoonMovie(response.DATE_PREMIERE, this.curDate)
+      console.log(this.curDate)
       console.log(response)
     })
+
   }
 
+  comingSoonMovie(premiereDate: string, currentDate: string) {
+    if (premiereDate > currentDate) {
+      return true
+    }
+    return false
+  }
 }

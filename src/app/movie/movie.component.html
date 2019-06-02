@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-md-8">
             <h2>{{movie?.TITLE}}</h2>
-            <h5><span class="badge badge-pill badge-info">Em breve</span></h5>
+            <h5 *ngIf="comingSoon"><span class="badge badge-pill badge-info">Em breve</span></h5>
             <p>
               <span class="badge badge-danger">16</span>
               &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {{movie?.GENRE}}
