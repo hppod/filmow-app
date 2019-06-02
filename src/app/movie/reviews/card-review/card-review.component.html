@@ -1,3 +1,11 @@
-<p>
-  card-review works!
-</p>
+<div class="card shadow p-3 mb-5 rounded">
+  <div class="card-body">
+    <h4><b>{{review?.RATING}} <i class="fa fa-star rating-star"></i></b></h4>
+    <p class="card-text text-review">
+      {{review?.REVIEW}}
+    </p>
+    <p class="date-user">
+      {{review?.DATE_REVIEW | date: 'dd/MM/yyyy'}} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {{review?.USERNAME}}
+    </p>
+  </div>
+</div>

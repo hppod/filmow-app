@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Review } from "./../review.model"
 
 @Component({
   selector: 'app-card-review',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-review.component.scss']
 })
 export class CardReviewComponent implements OnInit {
+
+  @Input() review: Review
 
   constructor() { }
 
