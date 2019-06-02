@@ -19,6 +19,7 @@ import { StorylineComponent } from './../../movie/storyline/storyline.component'
 import { ActorsComponent } from './../../movie/actors/actors.component'
 import { ReviewsComponent } from './../../movie/reviews/reviews.component'
 import { CardMovieComponent } from './../../movies/card-movie/card-movie.component'
+import { CardActorComponent } from './../../movie/actors/card-actor/card-actor.component'
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { CardMovieComponent } from './../../movies/card-movie/card-movie.compone
     StorylineComponent,
     ActorsComponent,
     ReviewsComponent,
-    CardMovieComponent
+    CardMovieComponent,
+    CardActorComponent
   ]
 })
 

@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { MoviesService } from "./movies/movies.service"
-import { MovieService } from "./movie/movie.service"
+import { MovieService } from "./movie/movie.service";
 
 @NgModule({
   imports: [
