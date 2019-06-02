@@ -7,12 +7,12 @@
             <h2>{{movie?.TITLE}}</h2>
             <h5 *ngIf="comingSoon"><span class="badge badge-pill badge-info">Em breve</span></h5>
             <p>
-              <span *ngIf="movie.AGE == 0" class="badge badge-success">L</span>
-              <span *ngIf="movie.AGE == 10" class="badge badge-primary">10</span>
-              <span *ngIf="movie.AGE == 12" class="badge badge-warning">12</span>
-              <span *ngIf="movie.AGE == 14" class="badge badge-secondary">14</span>
-              <span *ngIf="movie.AGE == 16" class="badge badge-danger">16</span>
-              <span *ngIf="movie.AGE == 18" class="badge badge-dark">18</span>
+              <span *ngIf="movie?.AGE == 0" class="badge badge-success">L</span>
+              <span *ngIf="movie?.AGE == 10" class="badge badge-primary">10</span>
+              <span *ngIf="movie?.AGE == 12" class="badge badge-warning">12</span>
+              <span *ngIf="movie?.AGE == 14" class="badge badge-secondary">14</span>
+              <span *ngIf="movie?.AGE == 16" class="badge badge-danger">16</span>
+              <span *ngIf="movie?.AGE == 18" class="badge badge-dark">18</span>
               &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {{movie?.GENRE}}
               &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {{movie?.DURATION}}
               &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {{movie?.DATE_PREMIERE | date: 'dd/MM/yyyy'}}
