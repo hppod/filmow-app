@@ -15,6 +15,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { MoviesService } from "./movies/movies.service"
 import { MovieService } from "./movie/movie.service";
 import { ActorsService } from "./movie/actors/actors.service";
+import { ReviewsService } from "./movie/reviews/reviews.service"
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { ActorsService } from "./movie/actors/actors.service";
   providers: [
     MoviesService,
     MovieService,
-    ActorsService
+    ActorsService,
+    ReviewsService
   ],
   bootstrap: [AppComponent]
 })
