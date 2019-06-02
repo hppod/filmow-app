@@ -4,13 +4,13 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-8">
-            <h2>It Chapter Two</h2>
+            <h2>{{movie?.TITLE}}</h2>
             <h5><span class="badge badge-pill badge-info">Em breve</span></h5>
             <p>
               <span class="badge badge-danger">16</span>
-              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Terror
-              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 1h40
-              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 05/09/2019
+              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {{movie?.GENRE}}
+              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {{movie?.DURATION}}
+              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {{movie?.DATE_PREMIERE | date: 'dd/MM/yyyy'}}
             </p>
           </div>
           <div class="col-md-2">
@@ -21,14 +21,12 @@
         </div>
         <div class="row">
           <div class="col-md-2">
-            <img class="materialboxed" width="236" height="350"
-              src="https://filmow-app.s3-sa-east-1.amazonaws.com/posters/it-2.jpg" alt="It Chapter 2">
+            <img class="materialboxed" width="236" height="350" [src]="movie?.POSTER_URL" [alt]="movie?.TITLE">
           </div>
           <div class="col-md-1">
           </div>
           <div class="col-md-6">
-            <iframe width="725" height="350" src="https://filmow-app.s3-sa-east-1.amazonaws.com/trailers/it-2.mp4"
-              frameborder="0" allowfullscreen></iframe>
+            <iframe width="725" height="350" [src]="trailer" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
         <hr />
