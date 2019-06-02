@@ -1,7 +1,7 @@
 <br />
 <div class="row">
   <div class="col-md-4">
-    <button class="btn btn-info btn-sm">Avaliar</button>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#reviewModal">Avaliar</button>
   </div>
   <div class="col-md-12">
     <div class="card shadow p-3 mb-5 rounded">
@@ -68,6 +68,34 @@
         <p class="date-user">
           25/10/2019 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; hppod
         </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+
+
+<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reviewModal">Avaliar It Chapter Two</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="review" class="col-form-label">Avaliação:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-info">Avaliar</button>
       </div>
     </div>
   </div>
