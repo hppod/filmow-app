@@ -24,8 +24,6 @@ export class MovieComponent implements OnInit {
       this.movie = response
       this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(response.TRAILER_URL)
       this.comingSoon = this.comingSoonMovie(response.DATE_PREMIERE, this.curDate)
-      console.log(this.curDate)
-      console.log(response)
     })
 
   }

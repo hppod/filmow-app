@@ -18,7 +18,6 @@ export class ActorsComponent implements OnInit {
     const id = this.route.parent.snapshot.params['id']
     this.as.getActorsOfMovie(id).subscribe((response) => {
       this.actors = response
-      console.log(response)
     })
   }
 

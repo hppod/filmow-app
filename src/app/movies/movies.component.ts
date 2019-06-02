@@ -16,7 +16,6 @@ export class MoviesComponent implements OnInit {
   ngOnInit() {
     this.ms.getInfoMovies().subscribe((response) => {
       this.movies = response
-      console.log(this.movies)
     })
   }
 
