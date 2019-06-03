@@ -25,16 +25,17 @@
           <label for="nota" class="col-form-label">Nota: </label>&nbsp;&nbsp;
           <app-rating (rated)="rate()"></app-rating>
         </div>
-        <form>
+        <form [formGroup]="reviewForm" novalidate>
           <div class="form-group">
-            <label for="review" class="col-form-label">Avaliação:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <app-input errorMessage="Campo obrigatório" label="Avaliação">
+              <textarea class="form-control" formControlName="REVIEW" autocomplete="off" placeholder="O que você achou do filme?"></textarea>
+            </app-input>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-info" (click)="sendReview()">Avaliar</button>
+        <button type="button" class="btn btn-info" (click)="sendReview()" [disabled]="reviewForm.invalid && rateValue === 0 || rateValue === undefined" data-dismiss="modal">Avaliar</button>
       </div>
     </div>
   </div>

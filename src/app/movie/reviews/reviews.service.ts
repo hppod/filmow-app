@@ -14,4 +14,8 @@ export class ReviewsService {
     getReviews(id: number): Observable<Review[]> {
         return this.http.get<Review[]>(`${Filmow_API}/movie-reviews/${id}`)
     }
+
+    sendReview(review: Review) {
+        return this.http.post<Review>(`${Filmow_API}/rr`, review)
+    }
 }

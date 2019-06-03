@@ -22,6 +22,7 @@ import { CardMovieComponent } from './../../movies/card-movie/card-movie.compone
 import { CardActorComponent } from './../../movie/actors/card-actor/card-actor.component'
 import { CardReviewComponent } from './../../movie/reviews/card-review/card-review.component'
 import { RatingComponent } from 'app/components/rating/rating.component';
+import { InputComponent } from './../../components/input/input.component'
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { RatingComponent } from 'app/components/rating/rating.component';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HomeComponent,
@@ -45,7 +47,11 @@ import { RatingComponent } from 'app/components/rating/rating.component';
     CardMovieComponent,
     CardActorComponent,
     CardReviewComponent,
-    RatingComponent
+    RatingComponent,
+    InputComponent
+  ],
+  exports: [
+    InputComponent
   ]
 })
 
