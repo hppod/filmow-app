@@ -7,6 +7,8 @@ import { Filmow_API } from "./../../app.api"
 @Injectable()
 export class ReviewsService {
 
+    rate: number = 0
+
     constructor(private http: HttpClient) { }
 
     getReviews(id: number): Observable<Review[]> {

@@ -23,15 +23,7 @@
       <div class="modal-body">
         <div>
           <label for="nota" class="col-form-label">Nota: </label>&nbsp;&nbsp;
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
-          <span><i class="fa fa-star"></i></span>
+          <app-rating (rated)="rate()"></app-rating>
         </div>
         <form>
           <div class="form-group">
@@ -42,7 +34,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-info">Avaliar</button>
+        <button type="button" class="btn btn-info" (click)="sendReview()">Avaliar</button>
       </div>
     </div>
   </div>

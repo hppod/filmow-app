@@ -12,6 +12,7 @@ export class ReviewsComponent implements OnInit {
 
   reviews: Review[]
   title: string
+  rated: boolean
 
   constructor(private rs: ReviewsService, private route: ActivatedRoute) { }
 
@@ -21,6 +22,14 @@ export class ReviewsComponent implements OnInit {
       this.reviews = response
       this.title = response[0].TITLE
     })
+  }
+
+  rate() {
+    this.rated = true
+  }
+
+  sendReview() {
+    console.log(this.rs.rate)
   }
 
 }
