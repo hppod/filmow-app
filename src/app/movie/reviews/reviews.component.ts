@@ -11,6 +11,7 @@ import { Review } from "./review.model"
 export class ReviewsComponent implements OnInit {
 
   reviews: Review[]
+  title: string
 
   constructor(private rs: ReviewsService, private route: ActivatedRoute) { }
 
@@ -18,7 +19,7 @@ export class ReviewsComponent implements OnInit {
     const id = this.route.parent.snapshot.params['id']
     this.rs.getReviews(id).subscribe((response) => {
       this.reviews = response
-      console.log(response)
+      this.title = response[0].TITLE
     })
   }
 

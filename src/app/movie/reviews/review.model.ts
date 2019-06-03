@@ -3,4 +3,5 @@ export interface Review {
     RATING: number
     REVIEW: string
     DATE_REVIEW: string
+    TITLE: string
 }
