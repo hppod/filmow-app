@@ -4,6 +4,7 @@ import { Observable } from "rxjs"
 import { Movie } from './../movies/movie.model'
 import { Storyline } from './storyline/storyline.model'
 import { Rating } from './rating.model'
+import { Poster } from './poster.model'
 import { Filmow_API } from './../app.api'
 
 
@@ -22,5 +23,9 @@ export class MovieService {
 
     getAvgRating(id: number): Observable<Rating> {
         return this.http.get<Rating>(`${Filmow_API}/avg-rating/${id}`)
+    }
+
+    getPoster(id: number): Observable<Poster> {
+        return this.http.get<Poster>(`${Filmow_API}/poster/${id}`)
     }
 }
