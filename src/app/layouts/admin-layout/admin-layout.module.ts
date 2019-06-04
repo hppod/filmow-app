@@ -23,6 +23,7 @@ import { CardActorComponent } from './../../movie/actors/card-actor/card-actor.c
 import { CardReviewComponent } from './../../movie/reviews/card-review/card-review.component'
 import { RatingComponent } from 'app/components/rating/rating.component';
 import { InputComponent } from './../../components/input/input.component'
+import { PaginationComponent } from './../../components/pagination/pagination.component'
 
 @NgModule({
   imports: [
@@ -48,10 +49,12 @@ import { InputComponent } from './../../components/input/input.component'
     CardActorComponent,
     CardReviewComponent,
     RatingComponent,
-    InputComponent
+    InputComponent,
+    PaginationComponent
   ],
   exports: [
-    InputComponent
+    InputComponent,
+    PaginationComponent
   ]
 })
 
