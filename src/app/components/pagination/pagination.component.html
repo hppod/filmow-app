@@ -1,3 +1,16 @@
-<p>
-  pagination works!
-</p>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item" *ngIf="this.ps.currentPage != 1">
+      <a class="page-link" (click)="backPage()" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item" *ngFor="let numberPage of numberOfPages"><a class="page-link"
+        (click)="setCurrentPage(numberPage)">{{numberPage}}</a></li>
+    <li class="page-item" *ngIf="this.ps.currentPage < numberOfPages.length">
+      <a class="page-link" (click)="nextPage()" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>

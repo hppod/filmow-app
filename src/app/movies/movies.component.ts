@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from "./movies.service"
 import { Movie } from "./movie.model"
+import { PaginationService } from 'app/components/pagination/pagination.service';
 
 @Component({
   selector: 'app-movies',
@@ -10,14 +11,13 @@ import { Movie } from "./movie.model"
 export class MoviesComponent implements OnInit {
 
   movies: Movie[] = []
-  currentPage: number = 1
   pages: number
   numberOfPages: number[] = []
 
-  constructor(private ms: MoviesService) { }
+  constructor(private ms: MoviesService, private ps: PaginationService) { }
 
   ngOnInit() {
-    this.findMovies(this.currentPage)
+    this.findMovies(this.ps.currentPage)
   }
 
   findMovies(currentPage: number) {
@@ -32,27 +32,16 @@ export class MoviesComponent implements OnInit {
     this.numberOfPages = Array.from({ length: this.pages }, (v, k) => ++k)
   }
 
-  setCurrentPage(number: number) {
-    this.currentPage = number
-    this.findMovies(this.currentPage)
+  currentPage() {
+      this.findMovies(this.ps.currentPage)
   }
 
-  nextPage() {
-    if (this.currentPage > this.numberOfPages.length) {
-      this.currentPage = this.pages
-    } else {
-      this.currentPage = this.currentPage + 1
-      this.findMovies(this.currentPage)
-    }
+  next() {
+      this.findMovies(this.ps.currentPage)
   }
 
-  backPage() {
-    if (this.currentPage < 1) {
-      this.currentPage = 1
-    } else {
-      this.currentPage = this.currentPage - 1
-      this.findMovies(this.currentPage)
-    }
+  back() {
+      this.findMovies(this.ps.currentPage)
   }
-
+  
 }
