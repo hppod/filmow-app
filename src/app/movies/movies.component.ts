@@ -17,6 +17,7 @@ export class MoviesComponent implements OnInit {
   constructor(private ms: MoviesService, private ps: PaginationService) { }
 
   ngOnInit() {
+    this.ps.currentPage = 1
     this.findMovies(this.ps.currentPage)
   }
 
@@ -33,15 +34,15 @@ export class MoviesComponent implements OnInit {
   }
 
   currentPage() {
-      this.findMovies(this.ps.currentPage)
+    this.findMovies(this.ps.currentPage)
   }
 
   next() {
-      this.findMovies(this.ps.currentPage)
+    this.findMovies(this.ps.currentPage)
   }
 
   back() {
-      this.findMovies(this.ps.currentPage)
+    this.findMovies(this.ps.currentPage)
   }
-  
+
 }

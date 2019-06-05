@@ -24,6 +24,7 @@ import { CardReviewComponent } from './../../movie/reviews/card-review/card-revi
 import { RatingComponent } from 'app/components/rating/rating.component';
 import { InputComponent } from './../../components/input/input.component'
 import { PaginationComponent } from './../../components/pagination/pagination.component'
+import { RegisterComponent } from "./../../register/register.component"
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { PaginationComponent } from './../../components/pagination/pagination.co
     CardReviewComponent,
     RatingComponent,
     InputComponent,
-    PaginationComponent
+    PaginationComponent,
+    RegisterComponent
   ],
   exports: [
     InputComponent,
