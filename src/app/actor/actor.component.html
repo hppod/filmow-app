@@ -50,15 +50,7 @@
         </div>
         <div class="row">
           <div class="col-md-3" *ngFor="let movie of moviesOfActor">
-            <a [routerLink]="['/movie', movie.ID]">
-              <div class="card shadow p-3 mb-5">
-                <img [src]="movie?.POSTER_URL" class="card-img-top" [alt]="movie?.TITLE">
-                <div class="card-body">
-                  <h5><b>{{movie?.TITLE}}</b></h5>
-                  <p class="card-text">{{movie?.CHARACTER_NAME}}</p>
-                </div>
-              </div>
-            </a>
+            <app-card-movie [movie]="movie" [character_name]="movie.CHARACTER_NAME"></app-card-movie>
           </div>
         </div>
       </div>

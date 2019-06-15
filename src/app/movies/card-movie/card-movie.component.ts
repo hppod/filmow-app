@@ -9,6 +9,8 @@ import { Movie } from './../movie.model'
 export class CardMovieComponent implements OnInit {
 
   @Input() movie: Movie[]
+  @Input() storyline: String
+  @Input() character_name: string
 
   constructor() { }
 
