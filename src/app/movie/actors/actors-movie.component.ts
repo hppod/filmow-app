@@ -4,11 +4,11 @@ import { ActorsService } from "./actors.service"
 import { ActivatedRoute } from "@angular/router"
 
 @Component({
-  selector: 'app-actors',
-  templateUrl: './actors.component.html',
-  styleUrls: ['./actors.component.scss']
+  selector: 'app-actors-movie',
+  templateUrl: './actors-movie.component.html',
+  styleUrls: ['./actors-movie.component.scss']
 })
-export class ActorsComponent implements OnInit {
+export class ActorsMovieComponent implements OnInit {
 
   constructor(private as: ActorsService, private route: ActivatedRoute) { }
 

@@ -16,7 +16,7 @@ import { HomeComponent } from './../../home/home.component'
 import { MoviesComponent } from './../../movies/movies.component'
 import { MovieComponent } from './../../movie/movie.component'
 import { StorylineComponent } from './../../movie/storyline/storyline.component'
-import { ActorsComponent } from './../../movie/actors/actors.component'
+import { ActorsMovieComponent } from '../../movie/actors/actors-movie.component'
 import { ReviewsComponent } from './../../movie/reviews/reviews.component'
 import { CardMovieComponent } from './../../movies/card-movie/card-movie.component'
 import { CardActorComponent } from './../../movie/actors/card-actor/card-actor.component'
@@ -25,6 +25,7 @@ import { RatingComponent } from 'app/components/rating/rating.component';
 import { InputComponent } from './../../components/input/input.component'
 import { PaginationComponent } from './../../components/pagination/pagination.component'
 import { RegisterComponent } from "./../../register/register.component"
+import { ActorsComponent } from "./../../actors/actors.component"
 
 @NgModule({
   imports: [
@@ -44,7 +45,7 @@ import { RegisterComponent } from "./../../register/register.component"
     MoviesComponent,
     MovieComponent,
     StorylineComponent,
-    ActorsComponent,
+    ActorsMovieComponent,
     ReviewsComponent,
     CardMovieComponent,
     CardActorComponent,
@@ -52,7 +53,8 @@ import { RegisterComponent } from "./../../register/register.component"
     RatingComponent,
     InputComponent,
     PaginationComponent,
-    RegisterComponent
+    RegisterComponent,
+    ActorsComponent
   ],
   exports: [
     InputComponent,
