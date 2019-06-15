@@ -5,7 +5,7 @@ import { Filmow_API } from "./../../app.api"
 import { Actor } from "./actor.model"
 
 @Injectable()
-export class ActorsService {
+export class ActorsMovieService {
 
     constructor(private http: HttpClient) { }
 

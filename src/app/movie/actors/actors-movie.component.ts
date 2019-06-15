@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Actor } from "./actor.model"
-import { ActorsService } from "./actors.service"
+import { ActorsMovieService } from "./actors.service"
 import { ActivatedRoute } from "@angular/router"
 
 @Component({
@@ -10,13 +10,13 @@ import { ActivatedRoute } from "@angular/router"
 })
 export class ActorsMovieComponent implements OnInit {
 
-  constructor(private as: ActorsService, private route: ActivatedRoute) { }
+  constructor(private ams: ActorsMovieService, private route: ActivatedRoute) { }
 
   actors: Actor[]
 
   ngOnInit() {
     const id = this.route.parent.snapshot.params['id']
-    this.as.getActorsOfMovie(id).subscribe((response) => {
+    this.ams.getActorsOfMovie(id).subscribe((response) => {
       this.actors = response
     })
   }

@@ -1,3 +1,13 @@
-<p>
-  actors works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div *ngFor="let actor of actors" class="col-md-3">
+        <app-card-actor [actor]="actor"></app-card-actor>
+      </div>
+    </div>
+
+    <app-pagination [numberOfPages]="numberOfPages" (next)="next()" (back)="back()" (currentPage)="currentPage()">
+    </app-pagination>
+
+  </div>
+</div>
