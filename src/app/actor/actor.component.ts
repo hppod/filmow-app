@@ -12,6 +12,8 @@ export class ActorComponent implements OnInit {
 
   actor: Actor
   moviesOfActor: ActorMovies[] = []
+  age: number
+  curDate = new Date().getFullYear()
 
   constructor(private as: ActorService, private route: ActivatedRoute) { }
 
