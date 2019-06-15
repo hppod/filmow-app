@@ -7,6 +7,7 @@ export interface Actor {
     CAREER: number
     BIOGRAPHY: string
     NACIONALITY: string
+    INITIALS: string
     NUMBERMOVIES: number
     ACTOR_URL: string
 }
