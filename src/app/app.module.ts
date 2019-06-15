@@ -18,6 +18,7 @@ import { ActorsMovieService } from "./movie/actors/actors.service";
 import { ActorsService } from "./actors/actors.service";
 import { ReviewsService } from "./movie/reviews/reviews.service"
 import { PaginationService } from './components/pagination/pagination.service';
+import { ActorService } from "./actor/actor.service"
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { PaginationService } from './components/pagination/pagination.service';
     ActorsMovieService,
     ActorsService,
     ReviewsService,
-    PaginationService
+    PaginationService,
+    ActorService
   ],
   bootstrap: [AppComponent]
 })

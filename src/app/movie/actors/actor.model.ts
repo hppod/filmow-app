@@ -5,3 +5,10 @@ export interface Actor {
     BORNDATE: Date
     ACTOR_URL: string
 }
+
+export interface ActorMovies {
+    ID: number
+    TITLE: string
+    CHARACTER_NAME: string
+    POSTER_URL: string
+}

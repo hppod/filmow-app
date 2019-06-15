@@ -22,7 +22,8 @@ export class MoviesComponent implements OnInit {
   }
 
   findMovies(currentPage: number) {
-    this.ms.getInfoMovies(currentPage).subscribe((response: Movie[]) => {
+    this.ms.getInfoMovies(currentPage).subscribe((response) => {
+      console.log(response)
       this.movies = response.result
       this.pages = response.pages
       this.setNumberOfPages()

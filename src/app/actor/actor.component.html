@@ -1,3 +1,42 @@
-<p>
-  actor works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card actor-detail-card shadow p-3 mb-5 rounded">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-8">
+            <h2>{{actor?.NAME}}</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <h4>{{actor?.BORNDATE | date: 'dd/MM/yyyy'}}</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <img class="materialboxed" width="236" height="350" [src]="actor?.ACTOR_URL" [alt]="actor?.NAME">
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Filmes de {{actor?.NAME}}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3" *ngFor="let movie of moviesOfActor">
+            <a [routerLink]="['/movie', movie.ID]">
+              <div class="card shadow p-3 mb-5">
+                <img [src]="movie?.POSTER_URL" class="card-img-top" [alt]="movie?.TITLE">
+                <div class="card-body">
+                  <h5><b>{{movie?.TITLE}}</b></h5>
+                  <p class="card-text">{{movie?.CHARACTER_NAME}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
