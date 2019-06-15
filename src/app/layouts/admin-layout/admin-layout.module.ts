@@ -26,6 +26,7 @@ import { InputComponent } from './../../components/input/input.component'
 import { PaginationComponent } from './../../components/pagination/pagination.component'
 import { RegisterComponent } from "./../../register/register.component"
 import { ActorsComponent } from "./../../actors/actors.component"
+import { ActorComponent } from "./../../actor/actor.component"
 
 @NgModule({
   imports: [
@@ -54,7 +55,8 @@ import { ActorsComponent } from "./../../actors/actors.component"
     InputComponent,
     PaginationComponent,
     RegisterComponent,
-    ActorsComponent
+    ActorsComponent,
+    ActorComponent
   ],
   exports: [
     InputComponent,

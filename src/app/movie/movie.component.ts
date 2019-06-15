@@ -23,9 +23,10 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
     const id: number = this.route.snapshot.params['id']
     this.ms.getMovie(id).subscribe((response) => {
+      console.log(response)
       this.movie = response
-      this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(response.result.TRAILER_URL)
-      this.comingSoon = this.comingSoonMovie(response.result.DATE_PREMIERE, this.curDate)
+      this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(response.TRAILER_URL)
+      this.comingSoon = this.comingSoonMovie(response.DATE_PREMIERE, this.curDate)
     })
 
     this.ms.getAvgRating(id).subscribe((response) => {
