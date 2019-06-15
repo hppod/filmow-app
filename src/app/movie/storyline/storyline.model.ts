@@ -3,3 +3,11 @@ export interface Storyline {
     DIRECTORS: string
     WRITERS: string
 }
+
+export interface Director {
+    NAME: string
+}
+
+export interface Writer {
+    NAME: string
+}

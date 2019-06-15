@@ -1,9 +1,10 @@
 <a [routerLink]="['/actor', actor.ID]">
   <div class="card shadow p-3 mb-5">
-    <img [src]="actor?.ACTOR_URL" class="card-img-top" [alt]="actor?.CHARACTER_NAME">
+    <img [src]="actor?.ACTOR_URL" class="card-img-top" [alt]="actor?.CHARACTER_NAME" width="220" height="298">
     <div class="card-body">
       <h4><b>{{actor?.CHARACTER_NAME}}</b></h4>
-      <p class="card-text">{{actor?.NAME}}</p>
+      <p *ngIf="actor?.CHARACTER_NAME" class="card-text">{{actor?.NAME}}</p>
+      <h4 *ngIf="!actor?.CHARACTER_NAME"><b>{{actor?.NAME}}</b></h4>
     </div>
   </div>
 </a>
