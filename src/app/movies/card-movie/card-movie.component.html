@@ -5,6 +5,9 @@
       <h4><b>{{movie.TITLE}}</b></h4>
       <p *ngIf="storyline">{{storyline}}...</p>
       <p *ngIf="character_name">{{character_name}}</p>
+      <p>
+        <span *ngIf="comingSoon" class="badge badge-pill badge-info">Em breve</span>
+      </p>
     </div>
   </div>
 </a>

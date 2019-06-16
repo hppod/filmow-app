@@ -50,7 +50,7 @@
         </div>
         <div class="row">
           <div class="col-md-3" *ngFor="let movie of moviesOfActor">
-            <app-card-movie [movie]="movie" [character_name]="movie.CHARACTER_NAME"></app-card-movie>
+            <app-card-movie [movie]="movie" [character_name]="movie.CHARACTER_NAME" [date_premiere]="movie.DATE_PREMIERE"></app-card-movie>
           </div>
         </div>
       </div>
