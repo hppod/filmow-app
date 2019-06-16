@@ -81,7 +81,6 @@ export class MoviesComponent implements OnInit {
 
   setFilter(option) {
     let genre: string
-
     this.ps.currentPage = 1
 
     if (option == 'Todos') {
@@ -95,6 +94,7 @@ export class MoviesComponent implements OnInit {
   }
 
   setShow(option) {
+    this.ps.currentPage = 1
     this.ms.params = this.ms.params.set('date', option)
     this.findMovies(this.ps.currentPage, this.column, this.order)
   }

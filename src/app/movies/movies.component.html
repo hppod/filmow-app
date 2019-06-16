@@ -40,9 +40,9 @@
     <ng-template #notData>
       <div class="card col-md-12 no-data">
         <div class="text-no-data">
-          <img class="margin-img" src="https://filmow-app.s3-sa-east-1.amazonaws.com/sad-popcorn-pb.jpg">
+          <img class="margin-img" style="max-height: 150px" src="https://filmow-app.s3-sa-east-1.amazonaws.com/sad-popcorn-pb.jpg">
         </div>
-        <h2 class="text-no-data">Não há nada para ser exibido aqui :(</h2>
+        <h3 class="text-no-data">Não há nada para ser exibido aqui :(</h3>
       </div>
     </ng-template>
     <app-pagination [numberOfPages]="numberOfPages" (next)="next()" (back)="back()" (currentPage)="currentPage()">
