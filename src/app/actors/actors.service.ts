@@ -9,7 +9,7 @@ export class ActorsService {
 
     constructor(private http: HttpClient) { }
 
-    getInfoActors(page: number): Observable<Actor[]> {
-        return this.http.get<Actor[]>(`${Filmow_API}/actors/${page}`)
+    getInfoActors(page: number, column: string, order: string): Observable<Actor[]> {
+        return this.http.get<Actor[]>(`${Filmow_API}/actors/${page}/${column}/${order}`)
     }
 }

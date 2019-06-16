@@ -1,6 +1,19 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
+      <div class="col-md-2">
+        <div class="dropdown">
+          <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="orderby" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Ordenar
+          </button>
+          <div class="dropdown-menu" aria-labelledby="orderby">
+            <a *ngFor="let option of options" class="dropdown-item" (click)="setOrder(option)">{{option.OPTION}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div *ngFor="let actor of actors" class="col-md-3">
         <app-card-actor [actor]="actor"></app-card-actor>
       </div>
