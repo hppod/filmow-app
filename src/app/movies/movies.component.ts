@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from "./movies.service"
 import { Movie } from "./movie.model"
 import { PaginationService } from 'app/components/pagination/pagination.service';
-import { HttpParams } from "@angular/common/http"
 
 @Component({
   selector: 'app-movies',
@@ -13,6 +12,7 @@ export class MoviesComponent implements OnInit {
 
   movies: Movie[] = []
   pages: number
+  count: number
   numberOfPages: number[] = []
   column: string = 'DATE_PREMIERE'
   order: string = 'DESC'
@@ -50,6 +50,7 @@ export class MoviesComponent implements OnInit {
     this.ms.getInfoMovies(currentPage, column, order).subscribe((response) => {
       this.movies = response['result']
       this.pages = response['pages']
+      this.count = response['count']
       this.setNumberOfPages()
     })
   }

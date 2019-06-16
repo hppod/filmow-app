@@ -1,13 +1,14 @@
 <a [routerLink]="['/movie', movie.ID]">
-  <div class="card">
-    <img class="card-img-top" [src]="movie.POSTER_URL" [alt]="movie.TITLE">
+  <div class="card" style="min-height: 573px; max-height: 573px">
+    <img class="card-img-top" [src]="movie.POSTER_URL" [alt]="movie.TITLE"
+      style="max-width: 239px; max-height: 355px;min-width: 239px; min-height: 355px;">
     <div class="card-body">
       <h4><b>{{movie.TITLE}}</b></h4>
       <p *ngIf="storyline">{{storyline}}...</p>
       <p *ngIf="character_name">{{character_name}}</p>
-      <p>
-        <span *ngIf="comingSoon" class="badge badge-pill badge-info">Em breve</span>
-      </p>
+    </div>
+    <div class="card-footer">
+      <span *ngIf="comingSoon" class="badge badge-pill badge-info">Em breve</span>
     </div>
   </div>
 </a>
