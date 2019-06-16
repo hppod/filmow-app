@@ -3,6 +3,7 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
 import { SearchService } from "./../search.service"
+import { FormBuilder, FormGroup } from "@angular/forms"
 
 @Component({
     selector: 'app-navbar',
@@ -15,8 +16,9 @@ export class NavbarComponent implements OnInit {
     mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
+    searchForm: FormGroup
 
-    constructor(location: Location, private element: ElementRef, private router: Router, private ss: SearchService) {
+    constructor(location: Location, private element: ElementRef, private router: Router, private ss: SearchService, private fb: FormBuilder) {
         this.location = location;
         this.sidebarVisible = false;
     }
@@ -34,13 +36,16 @@ export class NavbarComponent implements OnInit {
             }
         });
 
+        this.searchForm = this.fb.group({
+            search: this.fb.control(null)
+        })
     }
 
     showSearch() {
         return this.ss.isHome(this.router.url)
     }
 
-    definePlaceholder(){
+    definePlaceholder() {
         return this.ss.definePlaceholder(this.router.url)
     }
 

@@ -14,8 +14,6 @@ export class MoviesComponent implements OnInit {
   pages: number
   count: number
   numberOfPages: number[] = []
-  column: string = 'DATE_PREMIERE'
-  order: string = 'DESC'
 
   options: any[] = [
     { OPTION: 'Nome: A - Z', COLUMN: 'TITLE', ORDER: 'ASC' },
@@ -42,7 +40,7 @@ export class MoviesComponent implements OnInit {
       this.genres.unshift({ GENRE: 'Todos' })
     })
 
-    this.findMovies(this.ps.currentPage, this.column, this.order)
+    this.findMovies(this.ps.currentPage, this.ms.column, this.ms.order)
 
   }
 
@@ -60,23 +58,23 @@ export class MoviesComponent implements OnInit {
   }
 
   currentPage() {
-    this.findMovies(this.ps.currentPage, this.column, this.order)
+    this.findMovies(this.ps.currentPage, this.ms.column, this.ms.order)
   }
 
   next() {
-    this.findMovies(this.ps.currentPage, this.column, this.order)
+    this.findMovies(this.ps.currentPage, this.ms.column, this.ms.order)
   }
 
   back() {
-    this.findMovies(this.ps.currentPage, this.column, this.order)
+    this.findMovies(this.ps.currentPage, this.ms.column, this.ms.order)
   }
 
   setOrder(option) {
-    this.column = option.COLUMN
-    this.order = option.ORDER
+    this.ms.column = option.COLUMN
+    this.ms.order = option.ORDER
     this.ps.currentPage = 1
 
-    this.findMovies(this.ps.currentPage, this.column, this.order)
+    this.findMovies(this.ps.currentPage, this.ms.column, this.ms.order)
   }
 
   setFilter(option) {
@@ -90,13 +88,13 @@ export class MoviesComponent implements OnInit {
     }
 
     this.ms.params = this.ms.params.set('genre', genre)
-    this.findMovies(this.ps.currentPage, this.column, this.order)
+    this.findMovies(this.ps.currentPage, this.ms.column, this.ms.order)
   }
 
   setShow(option) {
     this.ps.currentPage = 1
     this.ms.params = this.ms.params.set('date', option)
-    this.findMovies(this.ps.currentPage, this.column, this.order)
+    this.findMovies(this.ps.currentPage, this.ms.column, this.ms.order)
   }
 
 }

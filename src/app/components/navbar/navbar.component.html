@@ -10,9 +10,10 @@
             <span class="navbar-toggler-icon icon-bar"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form class="navbar-form">
+            <form class="navbar-form" [formGroup]="searchForm">
                 <div class="input-group no-border" *ngIf="showSearch()">
-                    <input type="text" value="" class="form-control" placeholder={{definePlaceholder()}}>
+                    <input type="text" value="" class="form-control" formControlName="search"
+                        placeholder={{definePlaceholder()}}>
                     <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
                         <i class="material-icons">search</i>
                         <div class="ripple-container"></div>
