@@ -1,13 +1,14 @@
-import { Injectable } from "@angular/core"
+import { Injectable, Output, EventEmitter } from "@angular/core"
 import { HttpClient } from "@angular/common/http"
 import { Observable } from "rxjs"
 import { MoviesService } from "./../movies/movies.service"
 import { PaginationService } from "./pagination/pagination.service"
+import { FormBuilder, FormGroup, FormControl } from "@angular/forms"
 
 @Injectable()
 export class SearchService {
 
-    constructor(private http: HttpClient, private ms: MoviesService, private ps: PaginationService) { }
+    constructor(private http: HttpClient, private ms: MoviesService, private ps: PaginationService, private fb: FormBuilder) { }
 
     isHome(route: string) {
         if (route == "/home") {
@@ -23,5 +24,4 @@ export class SearchService {
             return "Buscar pelo nome"
         }
     }
-
 }

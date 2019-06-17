@@ -1,7 +1,15 @@
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from "./movies.service"
 import { Movie } from "./movie.model"
 import { PaginationService } from 'app/components/pagination/pagination.service';
+import { SearchService } from "./../components/search.service"
+
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/from';
 
 @Component({
   selector: 'app-movies',
@@ -30,7 +38,7 @@ export class MoviesComponent implements OnInit {
 
   genres: any[] = []
 
-  constructor(private ms: MoviesService, private ps: PaginationService) { }
+  constructor(private ms: MoviesService, private ps: PaginationService, private ss: SearchService) { }
 
   ngOnInit() {
     this.ps.currentPage = 1

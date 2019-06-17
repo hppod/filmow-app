@@ -8,7 +8,7 @@
 </div>
 <div class="sidebar-wrapper">
     <div *ngIf="isMobileMenu()">
-        <form class="navbar-form" [formGroup]="searchForm">
+        <!-- <form class="navbar-form">
             <span class="bmd-form-group">
                 <div class="input-group no-border" *ngIf="showSearch()">
                     <input type="text" value="" class="form-control" placeholder={{definePlaceholder()}}>
@@ -18,7 +18,7 @@
                     </button>
                 </div>
             </span>
-        </form>
+        </form> -->
     </div>
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
