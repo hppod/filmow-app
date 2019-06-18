@@ -27,7 +27,6 @@ import { PaginationComponent } from './../../components/pagination/pagination.co
 import { RegisterComponent } from "./../../register/register.component"
 import { ActorsComponent } from "./../../actors/actors.component"
 import { ActorComponent } from "./../../actor/actor.component"
-import { SearchComponent } from "./../../components/search/search.component"
 
 @NgModule({
   imports: [
@@ -58,12 +57,10 @@ import { SearchComponent } from "./../../components/search/search.component"
     RegisterComponent,
     ActorsComponent,
     ActorComponent,
-    SearchComponent
   ],
   exports: [
     InputComponent,
     PaginationComponent,
-    SearchComponent
   ]
 })
 
