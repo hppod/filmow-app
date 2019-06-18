@@ -2,9 +2,6 @@ import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/co
 import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
-import { SearchService } from "./../search.service"
-import { FormGroup, FormBuilder } from "@angular/forms"
-import { MoviesService } from "./../../movies/movies.service"
 
 @Component({
     selector: 'app-navbar',
@@ -17,11 +14,8 @@ export class NavbarComponent implements OnInit {
     mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
-    searchBar: FormGroup
 
-    @Output() canSearch: EventEmitter<any> = new EventEmitter()
-
-    constructor(location: Location, private element: ElementRef, private router: Router, private ss: SearchService, private fb: FormBuilder, private ms: MoviesService) {
+    constructor(location: Location, private element: ElementRef, private router: Router) {
         this.location = location;
         this.sidebarVisible = false;
     }
@@ -39,22 +33,6 @@ export class NavbarComponent implements OnInit {
             }
         });
 
-        this.searchBar = this.fb.group({
-            search: this.fb.control(null)
-        })
-    }
-
-    showSearch() {
-        return this.ss.isHome(this.router.url)
-    }
-
-    definePlaceholder() {
-        return this.ss.definePlaceholder(this.router.url)
-    }
-
-    defineParamsMS(searchTerm: string) {
-        this.ms.params = this.ms.params.set('search', searchTerm)
-        console.log(this.ms.params.get('search'))
     }
 
     sidebarOpen() {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router"
-import { SearchService } from "./../search.service"
 
 declare const $: any;
 declare interface RouteInfo {
@@ -24,18 +23,10 @@ export class SidebarComponent implements OnInit {
 
   menuItems: any[];
 
-  constructor(private ss: SearchService, private r: Router) { }
+  constructor() { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
-  }
-
-  showSearch() {
-    return this.ss.isHome(this.r.url)
-  }
-
-  definePlaceholder() {
-    return this.ss.definePlaceholder(this.r.url)
   }
 
   isMobileMenu() {

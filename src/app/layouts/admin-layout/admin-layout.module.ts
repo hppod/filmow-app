@@ -56,7 +56,7 @@ import { ActorComponent } from "./../../actor/actor.component"
     PaginationComponent,
     RegisterComponent,
     ActorsComponent,
-    ActorComponent
+    ActorComponent,
   ],
   exports: [
     InputComponent,
