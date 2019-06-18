@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms"
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
+    SearchComponent,
   ],
   exports: [
     FooterComponent,
