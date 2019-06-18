@@ -27,6 +27,7 @@ import { PaginationComponent } from './../../components/pagination/pagination.co
 import { RegisterComponent } from "./../../register/register.component"
 import { ActorsComponent } from "./../../actors/actors.component"
 import { ActorComponent } from "./../../actor/actor.component"
+import { SearchResultComponent } from "./../../search-result/search-result.component"
 
 @NgModule({
   imports: [
@@ -39,7 +40,7 @@ import { ActorComponent } from "./../../actor/actor.component"
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [
     HomeComponent,
@@ -57,6 +58,7 @@ import { ActorComponent } from "./../../actor/actor.component"
     RegisterComponent,
     ActorsComponent,
     ActorComponent,
+    SearchResultComponent
   ],
   exports: [
     InputComponent,

@@ -1,0 +1,25 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Exibindo resultados em filmes para a pesquisa: {{searchTerm}}</h3>
+        <h6>Foram encontrados {{count}} resultados para a sua pesquisa</h6>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let movie of movies" class="col-md-3">
+        <app-card-movie [movie]="movie" [storyline]="movie.STORYLINE" [date_premiere]="movie.DATE_PREMIERE">
+        </app-card-movie>
+      </div>
+    </div>
+    <ng-template #notMovies>
+      <div class="card col-md-12 no-data">
+        <div class="text-no-data">
+          <img class="margin-img" style="max-height: 150px"
+            src="https://filmow-app.s3-sa-east-1.amazonaws.com/sad-popcorn-pb.jpg">
+        </div>
+        <h3 class="text-no-data">Não há nada para ser exibido aqui :(</h3>
+      </div>
+    </ng-template>
+  </div>
+</div>
