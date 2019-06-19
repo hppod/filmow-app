@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
 
   menuItems: any[];
 
-  constructor() { }
+  constructor(private r: Router) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -36,4 +36,13 @@ export class SidebarComponent implements OnInit {
     return true;
   };
 
+  showSearch() {
+    const allowRoutes = ['/movies', '/actors']
+    const url = this.r.url
+
+    if (url == allowRoutes[0] || url == allowRoutes[1]) {
+      return true
+    }
+    return false
+  }
 }

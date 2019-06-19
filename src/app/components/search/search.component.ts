@@ -22,6 +22,14 @@ export class SearchComponent implements OnInit {
     })
   }
 
+  definePlaceholder() {
+    if (this.r.url == '/movies') {
+      return 'Buscar por filme...'
+    } else {
+      return 'Buscar por ator...'
+    }
+  }
+
   goSearch() {
     this.ss.urlOrigin = this.r.url
     this.ss.searchTerm = this.searchForm.get('search').value

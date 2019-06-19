@@ -1,6 +1,6 @@
-import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
-import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -33,6 +33,16 @@ export class NavbarComponent implements OnInit {
             }
         });
 
+    }
+
+    showSearch() {
+        const allowRoutes = ['/movies', '/actors']
+        const url = this.router.url
+
+        if (url == allowRoutes[0] || url == allowRoutes[1]) {
+            return true
+        }
+        return false
     }
 
     sidebarOpen() {
