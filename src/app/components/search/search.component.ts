@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
   goSearch() {
     this.ss.searchTerm = this.searchForm.get('search').value
 
-    this.ss.getSearch(this.ss.searchTerm).subscribe((response) => {
+    this.ss.getSearch(1, this.ss.searchTerm).subscribe((response) => {
 
       if (response['results'].length == 1) {
         const id = response['results'][0].ID
@@ -34,6 +34,7 @@ export class SearchComponent implements OnInit {
       } else {
         this.ss.searchMovieResults = response['results']
         this.ss.count = response['count']
+        this.ss.pages = response['pages']
         this.r.navigate(['/search', `${this.ss.searchTerm}`])
         this.searchForm.reset()
       }
