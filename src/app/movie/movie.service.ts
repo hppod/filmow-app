@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core"
 import { HttpClient } from "@angular/common/http"
 import { Observable } from "rxjs"
 import { Movie } from './../movies/movie.model'
-import { Storyline } from './storyline/storyline.model'
+import { Storyline, Director, Writer } from './storyline/storyline.model'
 import { Rating } from './rating.model'
 import { Poster } from './poster.model'
 import { Filmow_API } from './../app.api'
@@ -27,5 +27,13 @@ export class MovieService {
 
     getPoster(id: number): Observable<Poster> {
         return this.http.get<Poster>(`${Filmow_API}/poster/${id}`)
+    }
+
+    getDirectors(id: number): Observable<Director[]> {
+        return this.http.get<Director[]>(`${Filmow_API}/movie-directors/${id}`)
+    }
+
+    getWriters(id: number): Observable<Writer[]> {
+        return this.http.get<Writer[]>(`${Filmow_API}/movie-writers/${id}`)
     }
 }

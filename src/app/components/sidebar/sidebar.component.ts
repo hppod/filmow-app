@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router"
 
 declare const $: any;
 declare interface RouteInfo {
@@ -9,7 +10,8 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
   { path: '/home', title: 'Home', icon: 'home', class: '' },
-  { path: '/movies', title: 'Filmes', icon: 'movies', class: '' }
+  { path: '/movies', title: 'Filmes', icon: 'movies', class: '' },
+  { path: '/actors', title: 'Atores', icon: 'star', class: '' }
 ];
 
 @Component({
@@ -21,7 +23,7 @@ export class SidebarComponent implements OnInit {
 
   menuItems: any[];
 
-  constructor() { }
+  constructor(private r: Router) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -34,4 +36,13 @@ export class SidebarComponent implements OnInit {
     return true;
   };
 
+  showSearch() {
+    const allowRoutes = ['/movies', '/actors']
+    const url = this.r.url
+
+    if (url == allowRoutes[0] || url == allowRoutes[1]) {
+      return true
+    }
+    return false
+  }
 }

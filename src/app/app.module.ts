@@ -14,9 +14,12 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { MoviesService } from "./movies/movies.service"
 import { MovieService } from "./movie/movie.service";
-import { ActorsService } from "./movie/actors/actors.service";
+import { ActorsMovieService } from "./movie/actors/actors.service";
+import { ActorsService } from "./actors/actors.service";
 import { ReviewsService } from "./movie/reviews/reviews.service"
 import { PaginationService } from './components/pagination/pagination.service';
+import { ActorService } from "./actor/actor.service"
+import { SearchService } from "./components/search/search.service"
 
 @NgModule({
   imports: [
@@ -36,9 +39,12 @@ import { PaginationService } from './components/pagination/pagination.service';
   providers: [
     MoviesService,
     MovieService,
+    ActorsMovieService,
     ActorsService,
     ReviewsService,
-    PaginationService
+    PaginationService,
+    ActorService,
+    SearchService,
   ],
   bootstrap: [AppComponent]
 })

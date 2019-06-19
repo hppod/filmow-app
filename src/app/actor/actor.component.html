@@ -1,0 +1,59 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card actor-detail-card shadow p-3 mb-5 rounded">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-8">
+            <h2>{{actor?.NAME}}</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <h4>{{actor?.BORNDATE | date: 'dd/MM/yyyy'}}</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <img class="materialboxed" width="236" height="350" [src]="actor?.ACTOR_URL" [alt]="actor?.NAME">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-8">
+            <h5>Idade <br /><strong>{{actor?.AGE}} anos</strong></h5>
+            <h5>Nacionalidade <br /><strong>{{actor?.NACIONALITY}} | <span class="flag-icon flag-icon-{{actor?.INITIALS}}"></span></strong>
+            </h5>
+            <h5 style="text-align: justify">Biografia <br /><strong>{{actor?.BIOGRAPHY}}</strong></h5>
+            <br />
+            <div style="text-align: center">
+              <div class="row">
+                <div class="col-md-6">
+                  <h2>
+                    <strong>{{actor?.NUMBERMOVIES}}</strong>
+                    <h5>Filmes lançados</h5>
+                  </h2>
+                </div>
+                <div class="col-md-6">
+                  <h2>
+                    <strong>{{actor?.CAREER}}</strong>
+                    <h5>Anos de carreira</h5>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Filmes de {{actor?.NAME}}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3" *ngFor="let movie of moviesOfActor">
+            <app-card-movie [movie]="movie" [character_name]="movie.CHARACTER_NAME" [date_premiere]="movie.DATE_PREMIERE"></app-card-movie>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

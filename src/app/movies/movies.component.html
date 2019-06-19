@@ -1,12 +1,52 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div class="row">
-      <div *ngFor="let movie of movies" class="col-md-3">
-        <app-card-movie [movie]="movie"></app-card-movie>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="dropdown">
+          <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="orderby" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Ordenar
+          </button>
+          <div class="dropdown-menu" aria-labelledby="orderby">
+            <a *ngFor="let option of options" class="dropdown-item" (click)="setOrder(option)">{{option.OPTION}}</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="show" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Exibir
+          </button>
+          <div class="dropdown-menu" aria-labelledby="show">
+            <a *ngFor="let show of shows" class="dropdown-item" (click)="setShow(show.SHOW)">{{show.OPTION}}</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="filter" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Filtrar
+          </button>
+          <div class="dropdown-menu" aria-labelledby="filter">
+            <a *ngFor="let genre of genres" class="dropdown-item" (click)="setFilter(genre.GENRE)">{{genre.GENRE}}</a>
+          </div>
+        </div>
       </div>
     </div>
-
-    <app-pagination [numberOfPages]="numberOfPages" (next)="next()" (back)="back()" (currentPage)="currentPage()"></app-pagination>
-
+    <div class="row" *ngIf="count; else notData">
+      <div *ngFor="let movie of movies" class="col-md-3">
+        <app-card-movie [movie]="movie" [storyline]="movie.STORYLINE" [date_premiere]="movie.DATE_PREMIERE">
+        </app-card-movie>
+      </div>
+    </div>
+    <ng-template #notData>
+      <div class="card col-md-12 no-data">
+        <div class="text-no-data">
+          <img class="margin-img" style="max-height: 150px"
+            src="https://filmow-app.s3-sa-east-1.amazonaws.com/sad-popcorn-pb.jpg">
+        </div>
+        <h3 class="text-no-data">Não há nada para ser exibido aqui :(</h3>
+      </div>
+    </ng-template>
+    <app-pagination [numberOfPages]="numberOfPages" (next)="next()" (back)="back()" (currentPage)="currentPage()">
+    </app-pagination>
   </div>
 </div>

@@ -16,7 +16,7 @@ import { HomeComponent } from './../../home/home.component'
 import { MoviesComponent } from './../../movies/movies.component'
 import { MovieComponent } from './../../movie/movie.component'
 import { StorylineComponent } from './../../movie/storyline/storyline.component'
-import { ActorsComponent } from './../../movie/actors/actors.component'
+import { ActorsMovieComponent } from '../../movie/actors/actors-movie.component'
 import { ReviewsComponent } from './../../movie/reviews/reviews.component'
 import { CardMovieComponent } from './../../movies/card-movie/card-movie.component'
 import { CardActorComponent } from './../../movie/actors/card-actor/card-actor.component'
@@ -24,6 +24,10 @@ import { CardReviewComponent } from './../../movie/reviews/card-review/card-revi
 import { RatingComponent } from 'app/components/rating/rating.component';
 import { InputComponent } from './../../components/input/input.component'
 import { PaginationComponent } from './../../components/pagination/pagination.component'
+import { RegisterComponent } from "./../../register/register.component"
+import { ActorsComponent } from "./../../actors/actors.component"
+import { ActorComponent } from "./../../actor/actor.component"
+import { SearchResultComponent } from "./../../search-result/search-result.component"
 
 @NgModule({
   imports: [
@@ -36,25 +40,29 @@ import { PaginationComponent } from './../../components/pagination/pagination.co
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [
     HomeComponent,
     MoviesComponent,
     MovieComponent,
     StorylineComponent,
-    ActorsComponent,
+    ActorsMovieComponent,
     ReviewsComponent,
     CardMovieComponent,
     CardActorComponent,
     CardReviewComponent,
     RatingComponent,
     InputComponent,
-    PaginationComponent
+    PaginationComponent,
+    RegisterComponent,
+    ActorsComponent,
+    ActorComponent,
+    SearchResultComponent
   ],
   exports: [
     InputComponent,
-    PaginationComponent
+    PaginationComponent,
   ]
 })
 

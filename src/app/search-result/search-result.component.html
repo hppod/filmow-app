@@ -1,0 +1,23 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Exibindo resultados para a pesquisa: {{searchTerm}}</h3>
+        <h6>Foram encontrados {{count}} resultados para a sua pesquisa</h6>
+      </div>
+    </div>
+    <div class="row" *ngIf="movies">
+      <div *ngFor="let movie of movies" class="col-md-3">
+        <app-card-movie [movie]="movie" [storyline]="movie.STORYLINE" [date_premiere]="movie.DATE_PREMIERE">
+        </app-card-movie>
+      </div>
+    </div>
+    <div class="row" *ngIf="actors">
+      <div *ngFor="let actor of actors" class="col-md-3">
+        <app-card-actor [actor]="actor"></app-card-actor>
+      </div>
+    </div>
+    <app-pagination [numberOfPages]="numberOfPages" (next)="next()" (back)="back()" (currentPage)="currentPage()">
+    </app-pagination>
+  </div>
+</div>

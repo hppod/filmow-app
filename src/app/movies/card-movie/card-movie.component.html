@@ -3,7 +3,11 @@
     <img class="card-img-top" [src]="movie.POSTER_URL" [alt]="movie.TITLE">
     <div class="card-body">
       <h4><b>{{movie.TITLE}}</b></h4>
-      <p>{{movie.STORYLINE}}...</p>
+      <p *ngIf="storyline">{{storyline}}...</p>
+      <p *ngIf="character_name">{{character_name}}</p>
+    </div>
+    <div class="card-footer">
+      <span *ngIf="comingSoon" class="badge badge-pill badge-info">Em breve</span>
     </div>
   </div>
 </a>
