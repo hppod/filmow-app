@@ -12,6 +12,7 @@ export class ActorsComponent implements OnInit {
 
   actors: Actor[] = []
   pages: number
+  count: number
   numberOfPages: number[] = []
   column: string = 'NAME'
   order: string = 'ASC'
@@ -34,6 +35,7 @@ export class ActorsComponent implements OnInit {
     this.as.getInfoActors(currentPage, column, order).subscribe((response) => {
       this.actors = response['result']
       this.pages = response['pages']
+      this.count = response['count']
       this.setNumberOfPages()
     })
   }
