@@ -39,14 +39,14 @@ export class SearchComponent implements OnInit {
     this.ss.getSearch(route, 1, this.ss.searchTerm).subscribe((response) => {
       if (response['results'].length == 1) {
         const id = response['results'][0].ID
-        if (route == '/home' || route == '/movies') {
+        if (route == '/movies') {
           this.r.navigate(['/movie', `${id}`])
         } else {
           this.r.navigate(['/actor', `${id}`])
         }
         this.searchForm.reset()
       } else {
-        if (route == '/home' || route == '/movies') {
+        if (route == '/movies') {
           this.ss.searchMovieResults = response['results']
         } else {
           this.ss.searchActorResults = response['results']

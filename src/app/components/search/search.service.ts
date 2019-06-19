@@ -18,7 +18,7 @@ export class SearchService {
     constructor(private http: HttpClient) { }
 
     getSearch(route: string, page: number, searchTerm: string): Observable<any[]> {
-        if (route == '/home' || route == '/movies') {
+        if (route == '/movies') {
             return this.http.get<Movie[]>(`${Filmow_API}/movies/${page}/${searchTerm}`)
         } else {
             return this.http.get<Actor[]>(`${Filmow_API}/actors/${page}/${searchTerm}`)

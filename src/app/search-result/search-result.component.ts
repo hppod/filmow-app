@@ -21,7 +21,7 @@ export class SearchResultComponent implements OnInit {
   constructor(private ss: SearchService, private ps: PaginationService, private r: Router) { }
 
   ngOnInit() {
-    if (this.ss.urlOrigin == '/home' || this.ss.urlOrigin == '/movies') {
+    if (this.ss.urlOrigin == '/movies') {
       this.setResultsMovies()
     } else {
       this.setResultsActors()
@@ -44,7 +44,7 @@ export class SearchResultComponent implements OnInit {
   getMoviesFromOtherPages(currentPage: number, searchTerm: string) {
     const url = this.ss.urlOrigin
 
-    if (url == '/home' || url == '/movies') {
+    if (url == '/movies') {
       this.ss.getSearch(url, currentPage, searchTerm).subscribe((response) => {
         this.ss.searchMovieResults = response['results']
         this.pages = response['pages']
