@@ -23,23 +23,33 @@ export class SearchComponent implements OnInit {
   }
 
   goSearch() {
+    this.ss.urlOrigin = this.r.url
     this.ss.searchTerm = this.searchForm.get('search').value
 
-    this.ss.getSearch(1, this.ss.searchTerm).subscribe((response) => {
+    const route = this.ss.urlOrigin
 
+    this.ss.getSearch(route, 1, this.ss.searchTerm).subscribe((response) => {
       if (response['results'].length == 1) {
         const id = response['results'][0].ID
-        this.r.navigate(['/movie', `${id}`])
+        if (route == '/home' || route == '/movies') {
+          this.r.navigate(['/movie', `${id}`])
+        } else {
+          this.r.navigate(['/actor', `${id}`])
+        }
         this.searchForm.reset()
       } else {
-        this.ss.searchMovieResults = response['results']
+        if (route == '/home' || route == '/movies') {
+          this.ss.searchMovieResults = response['results']
+        } else {
+          this.ss.searchActorResults = response['results']
+        }
         this.ss.count = response['count']
         this.ss.pages = response['pages']
         this.r.navigate(['/search', `${this.ss.searchTerm}`])
         this.searchForm.reset()
       }
-
     })
+
   }
 
 }
