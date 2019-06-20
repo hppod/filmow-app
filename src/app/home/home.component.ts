@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from "./home.service"
+import { Movie } from "./../movies/movie.model"
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  inTheatersMovies: Movie[] = []
+  comingSoonMovies: Movie[] = []
+
+  constructor(private hs: HomeService) { }
 
   ngOnInit() {
+
+    this.hs.getMoviesInTheaters().subscribe((response) => {
+      this.inTheatersMovies = response
+    })
+
+    this.hs.getMoviesComingSoon().subscribe((response) => {
+      this.comingSoonMovies = response
+    })
+
   }
 
 }
