@@ -14,19 +14,23 @@
       </div>
     </div>
     <br />
-    <hr>
-    <h4>Em cartaz</h4>
-    <div class="row">
-      <div *ngFor="let movie of inTheatersMovies" class="col-md-3">
-        <app-card-movie [movie]="movie" [date_premiere]="movie.DATE_PREMIERE"></app-card-movie>
+    <div *ngIf="inTheatersMovies">
+      <hr>
+      <h4>Em cartaz</h4>
+      <div class="row">
+        <div *ngFor="let movie of inTheatersMovies" class="col-md-3">
+          <app-card-movie [movie]="movie" [date_premiere]="movie.DATE_PREMIERE"></app-card-movie>
+        </div>
       </div>
     </div>
     <br />
-    <hr>
-    <h4>Em breve nos próximos 6 meses</h4>
-    <div class="row">
-      <div *ngFor="let movie of comingSoonMovies" class="col-md-3">
-        <app-card-movie [movie]="movie" [date_premiere]="movie.DATE_PREMIERE"></app-card-movie>
+    <div *ngIf="comingSoonMovies">
+      <hr>
+      <h4>Em breve nos próximos 6 meses</h4>
+      <div class="row">
+        <div *ngFor="let movie of comingSoonMovies" class="col-md-3">
+          <app-card-movie [movie]="movie" [date_premiere]="movie.DATE_PREMIERE"></app-card-movie>
+        </div>
       </div>
     </div>
   </div>

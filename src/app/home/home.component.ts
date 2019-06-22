@@ -17,11 +17,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     this.hs.getMoviesInTheaters().subscribe((response) => {
-      this.inTheatersMovies = response
+      this.inTheatersMovies = response['results']
     })
 
     this.hs.getMoviesComingSoon().subscribe((response) => {
-      this.comingSoonMovies = response
+      this.comingSoonMovies = response['results']
     })
 
   }
