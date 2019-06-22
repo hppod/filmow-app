@@ -12,8 +12,4 @@ export class HomeService {
     getMoviesInTheaters(): Observable<Movie[]> {
         return this.http.get<Movie[]>(`${Filmow_API}/movies-intheaters`)
     }
-
-    getMoviesComingSoon(): Observable<Movie[]> {
-        return this.http.get<Movie[]>(`${Filmow_API}/movies-comingsoon`)
-    }
 }
