@@ -10,10 +10,10 @@ export class HomeService {
     constructor(private http: HttpClient) { }
 
     getMoviesInTheaters(): Observable<Movie[]> {
-        return this.http.get<Movie[]>(`${Filmow_API}/movies-intheaters/1`)
+        return this.http.get<Movie[]>(`${Filmow_API}/movies-intheaters`)
     }
 
     getMoviesComingSoon(): Observable<Movie[]> {
-        return this.http.get<Movie[]>(`${Filmow_API}/movies-comingsoon/1`)
+        return this.http.get<Movie[]>(`${Filmow_API}/movies-comingsoon`)
     }
 }

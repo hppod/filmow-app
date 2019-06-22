@@ -10,18 +10,19 @@ import { Movie } from "./../movies/movie.model"
 export class HomeComponent implements OnInit {
 
   inTheatersMovies: Movie[] = []
+ 
   comingSoonMovies: Movie[] = []
 
   constructor(private hs: HomeService) { }
 
   ngOnInit() {
-
+        
     this.hs.getMoviesInTheaters().subscribe((response) => {
-      this.inTheatersMovies = response['results']
+      this.inTheatersMovies = response
     })
 
     this.hs.getMoviesComingSoon().subscribe((response) => {
-      this.comingSoonMovies = response['results']
+      this.comingSoonMovies = response
     })
 
   }
