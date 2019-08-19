@@ -9,6 +9,7 @@ import { RegisterComponent } from "./../../register/register.component"
 import { ActorsComponent } from "./../../actors/actors.component"
 import { ActorComponent } from "./../../actor/actor.component"
 import { SearchResultComponent } from "./../../search-result/search-result.component"
+import { LoginComponent } from 'app/login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -25,5 +26,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'actors', component: ActorsComponent },
     { path: 'actor/:id', component: ActorComponent },
     { path: 'search/:find', component: SearchResultComponent },
-    { path: 'signin', component: RegisterComponent }
+    { path: 'signin', component: RegisterComponent },
+    { path: 'login', component: LoginComponent }
 ];

@@ -1,7 +1,8 @@
 <br />
 <div class="row">
   <div class="col-md-4">
-    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#reviewModal">Avaliar</button>
+    <button type="button" *ngIf="!showButtonRating()" class="btn btn-info btn-sm" data-toggle="modal"
+      data-target="#reviewModal">Avaliar</button>
   </div>
   <div *ngFor="let review of reviews" class="col-md-12">
     <app-card-review [review]="review"></app-card-review>
@@ -28,14 +29,17 @@
         <form [formGroup]="reviewForm" novalidate>
           <div class="form-group">
             <app-input errorMessage="Campo obrigatório" label="Avaliação">
-              <textarea class="form-control" formControlName="REVIEW" autocomplete="off" placeholder="O que você achou do filme?"></textarea>
+              <textarea class="form-control" formControlName="REVIEW" autocomplete="off"
+                placeholder="O que você achou do filme?"></textarea>
             </app-input>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-info" (click)="sendReview()" [disabled]="reviewForm.invalid && rateValue === 0 || rateValue === undefined" data-dismiss="modal">Avaliar</button>
+        <button type="button" class="btn btn-info" (click)="sendReview()"
+          [disabled]="reviewForm.invalid && rateValue === 0 || rateValue === undefined"
+          data-dismiss="modal">Avaliar</button>
       </div>
     </div>
   </div>

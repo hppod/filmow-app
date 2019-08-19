@@ -1,0 +1,41 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="col-md-6">
+        <div class="card shadow p-3 mb-5 rounded">
+  
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12" style="text-align: center">
+                <h2>Login</h2>
+              </div>
+            </div>
+            <form [formGroup]="loginForm" novalidate>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <app-input errorMessage="Campo obrigatório" label="Usuário">
+                      <input type="text" value="" placeholder="Usuário" formControlName="USERNAME" class="form-control" />
+                    </app-input>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <app-input errorMessage="Campo obrigatório" label="Senha">
+                      <input type="password" value="" placeholder="Senha" formControlName="PASS" class="form-control" />
+                    </app-input>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <br />
+            <div class="row">
+              <button class="btn btn-primary" (click)="login()"
+                [disabled]="loginForm.invalid">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

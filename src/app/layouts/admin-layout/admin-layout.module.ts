@@ -28,6 +28,7 @@ import { RegisterComponent } from "./../../register/register.component"
 import { ActorsComponent } from "./../../actors/actors.component"
 import { ActorComponent } from "./../../actor/actor.component"
 import { SearchResultComponent } from "./../../search-result/search-result.component"
+import { LoginComponent } from 'app/login/login.component';
 
 @NgModule({
   imports: [
@@ -58,7 +59,8 @@ import { SearchResultComponent } from "./../../search-result/search-result.compo
     RegisterComponent,
     ActorsComponent,
     ActorComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    LoginComponent
   ],
   exports: [
     InputComponent,

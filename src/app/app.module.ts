@@ -22,6 +22,8 @@ import { ActorService } from "./actor/actor.service"
 import { SearchService } from "./components/search/search.service"
 import { HomeService } from "./home/home.service"
 import { RegisterService } from './register/register.service';
+import { LoginService } from './login/login.service';
+import { CookieService } from "ngx-cookie-service"
 
 @NgModule({
   imports: [
@@ -36,7 +38,7 @@ import { RegisterService } from './register/register.service';
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
+    AdminLayoutComponent
   ],
   providers: [
     MoviesService,
@@ -48,7 +50,9 @@ import { RegisterService } from './register/register.service';
     ActorService,
     SearchService,
     HomeService,
-    RegisterService
+    RegisterService,
+    LoginService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

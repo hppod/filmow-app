@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { CookieService } from "ngx-cookie-service"
 
 @Component({
     selector: 'app-navbar',
@@ -15,12 +16,17 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location, private element: ElementRef, private router: Router) {
+    cookieIsLoggedinValue: string
+
+    constructor(location: Location, private element: ElementRef, private router: Router, private cs: CookieService) {
         this.location = location;
         this.sidebarVisible = false;
     }
 
     ngOnInit() {
+
+        this.cookieIsLoggedinValue = this.cs.get('isLoggedin')
+
         this.listTitles = ROUTES.filter(listTitle => listTitle);
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
@@ -33,6 +39,8 @@ export class NavbarComponent implements OnInit {
             }
         });
 
+        this.showButtonsLoginAndRegister()
+
     }
 
     showSearch() {
@@ -43,6 +51,17 @@ export class NavbarComponent implements OnInit {
             return true
         }
         return false
+    }
+
+    showButtonsLoginAndRegister() {
+        if (this.cookieIsLoggedinValue == 't') {
+            return false
+        }
+        return true
+    }
+
+    logout() {
+        this.cs.deleteAll()
     }
 
     sidebarOpen() {
