@@ -21,6 +21,7 @@ import { PaginationService } from './components/pagination/pagination.service';
 import { ActorService } from "./actor/actor.service"
 import { SearchService } from "./components/search/search.service"
 import { HomeService } from "./home/home.service"
+import { RegisterService } from './register/register.service';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { HomeService } from "./home/home.service"
     PaginationService,
     ActorService,
     SearchService,
-    HomeService
+    HomeService,
+    RegisterService
   ],
   bootstrap: [AppComponent]
 })

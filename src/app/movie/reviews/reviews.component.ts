@@ -28,7 +28,7 @@ export class ReviewsComponent implements OnInit {
     })
 
     this.reviewForm = this.fb.group({
-      USER_ID: 5,
+      USER_ID: 7,
       MOVIE_ID: this.id,
       RATING: undefined,
       REVIEW: this.fb.control(null, [Validators.required, Validators.maxLength(1000)]),

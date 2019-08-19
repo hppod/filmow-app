@@ -9,37 +9,48 @@
               <h2>Registrar-se</h2>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <input type="text" value="" placeholder="Nome" class="form-control" />
+          <form [formGroup]="registerForm" novalidate>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <app-input errorMessage="Campo obrigatório" label="Seu nome">
+                    <input type="text" value="" placeholder="Nome" formControlName="NAME" class="form-control" />
+                  </app-input>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <input type="text" value="" placeholder="Usuário" class="form-control" />
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <app-input errorMessage="Campo obrigatório" label="Usuário">
+                    <input type="text" value="" placeholder="Usuário" formControlName="USERNAME" class="form-control" />
+                  </app-input>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <input type="text" value="" placeholder="E-mail" class="form-control" />
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <app-input errorMessage="Campo obrigatório" label="Seu e-mail">
+                    <input type="text" value="" placeholder="E-mail" formControlName="EMAIL" class="form-control" />
+                  </app-input>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <input type="password" value="" placeholder="Senha" class="form-control" />
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <app-input errorMessage="Campo obrigatório" label="Senha">
+                    <input type="password" value="" placeholder="Senha" formControlName="PASS" class="form-control" />
+                  </app-input>
+                </div>
               </div>
             </div>
-          </div>
+          </form>
           <br />
           <div class="row">
-            <button class="btn btn-primary">Registrar</button>
+            <button class="btn btn-primary" (click)="doneRegister()"
+              [disabled]="registerForm.invalid">Registrar</button>
           </div>
         </div>
       </div>
