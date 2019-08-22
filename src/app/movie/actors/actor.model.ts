@@ -4,7 +4,6 @@ export interface Actor {
     NAME: string
     BORNDATE: Date
     AGE: number
-    CAREER: number
     BIOGRAPHY: string
     NACIONALITY: string
     INITIALS: string
